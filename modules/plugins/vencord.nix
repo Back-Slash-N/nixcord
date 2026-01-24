@@ -6,6 +6,9 @@ let
   inherit (lib) types mkEnableOption mkOption;
 in
 {
+  oneko = {
+    enable = mkEnableOption ''cat follow mouse (real) (Vencord-only)'';
+  };
   spotifyControls = {
     enable = mkEnableOption ''Adds a Spotify player above the account panel (Vencord-only)'';
   };

@@ -47,6 +47,7 @@
             vencord = pkgs.callPackage ./pkgs/vencord.nix { };
             vencord-unstable = pkgs.callPackage ./pkgs/vencord.nix { unstable = true; };
             equicord = pkgs.callPackage ./pkgs/equicord.nix { };
+            generate = pkgs.callPackage ./pkgs/generate-options.nix { };
 
             docs-html =
               (import ./docs {
