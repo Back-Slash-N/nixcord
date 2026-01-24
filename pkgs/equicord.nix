@@ -96,12 +96,12 @@ stdenv.mkDerivation (finalAttrs: {
         echo "Fetching latest Equicord tag..."
         new_tag=$(
           curl -s "https://api.github.com/repos/Equicord/Equicord/tags" |
-            jq -r '.[] | select(.name | test("^\\d{4}-\\d{2}-\\d{2}$")) | .name' |
-            sort -r |
+            jq -r '.[] | select(.name | test("^v\\d+\\.\\d+\\.\\d+(\\.\\d+)?$")) | .name' |
+            sort -V -r |
             head -1
         )
 
-        [[ ! "$new_tag" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] && exit 1
+        [[ ! "$new_tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(\.[0-9]+)?$ ]] && exit 1
 
         echo "Updating to version: $new_tag"
         new_hash=$(
