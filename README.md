@@ -101,7 +101,9 @@ You can configure Vencord (default), Equicord, Vesktop, or Dorion
         ignoreActivities = {
           enable = true;
           ignorePlaying = true;
-          ignoredActivities = [ "League of Legends" ];
+          ignoredActivities = [
+            { id = "game-id"; name = "League of Legends"; type = 0; }
+          ];
         };
       };
     };
