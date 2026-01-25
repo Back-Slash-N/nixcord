@@ -15,17 +15,28 @@ stdenvNoCC.mkDerivation {
   src = buildNpmPackage {
     pname = "generate-plugin-options";
     version = "1.0.0";
+
     src = lib.cleanSource ../scripts/generate-plugin-options;
-    npmDepsHash = "sha256-ySHi1pmZYoACgCV0ZVo/CfkTjacGH1ebCpnhPsnjpFU=";
+
+    npmDepsHash = "sha256-7jmEzHS9Xk5PSwfq9P40YTXSZiBqDFhCxZrg3E7AWX8=";
+
     dontNpmBuild = true;
+
     installPhase = ''
       mkdir -p "$out"
-      cp -r src "$out/"
-      cp -r tests "$out/"
-      cp package.json "$out/"
-      cp tsconfig.json "$out/"
-      cp vitest.config.ts "$out/"
-      cp -r node_modules "$out/"
+
+      items=(
+        src
+        tests
+        package.json
+        tsconfig.json
+        vitest.config.ts
+        node_modules
+      )
+
+      for i in "''${items[@]}"; do
+        cp -r "$i" "$out/"
+      done
     '';
   };
 
@@ -36,6 +47,7 @@ stdenvNoCC.mkDerivation {
   ];
 
   doCheck = true;
+
   checkPhase = ''
     runHook preCheck
     cp -r $src $TMPDIR/test-src

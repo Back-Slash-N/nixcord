@@ -6,17 +6,25 @@ let
   inherit (lib) types mkEnableOption mkOption;
 in
 {
+  moreQuickReactions = {
+    enable = mkEnableOption "Increases the number of reactions available in the Quick React hover menu (Vencord-only)";
+    reactionCount = mkOption {
+      default = 5;
+      description = "Number of reactions (0-42)";
+      type = types.int;
+    };
+  };
   oneko = {
-    enable = mkEnableOption ''cat follow mouse (real) (Vencord-only)'';
+    enable = mkEnableOption "cat follow mouse (real) (Vencord-only)";
   };
   spotifyControls = {
-    enable = mkEnableOption ''Adds a Spotify player above the account panel (Vencord-only)'';
+    enable = mkEnableOption "Adds a Spotify player above the account panel (Vencord-only)";
   };
   vencordToolbox = {
-    enable = mkEnableOption ''Adds a button to the titlebar that houses Vencord quick actions (Vencord-only)'';
+    enable = mkEnableOption "Adds a button to the titlebar that houses Vencord quick actions (Vencord-only)";
     showPluginMenu = mkOption {
       default = true;
-      description = ''Show the plugins menu in the toolbox'';
+      description = "Show the plugins menu in the toolbox";
       type = types.bool;
     };
   };
