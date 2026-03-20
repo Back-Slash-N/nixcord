@@ -17,9 +17,9 @@
 }:
 
 let
-  version = "v1.14.5.1";
-  hash = "sha256-uro7dGoNxyMPd3bKgNDZRFR1+njc1Ao7yC4CFyXuZuM=";
-  pnpmDeps = "sha256-MipgLtabw5sNMg7KiD0SQK7UjxXpVY3HpgIIuiTgHL0=";
+  version = "v1.14.6.1";
+  hash = "sha256-2+/r5SMgNgxV1aIkdtevpBqvIcPhE34ElciBklDD0RM=";
+  pnpmDeps = "sha256-6M+5B8iUZu8CEEzScpkqGj3odIAAHxn8C5R9G7fXHTs=";
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "equicord";
