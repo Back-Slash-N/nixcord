@@ -25,27 +25,27 @@
 
 let
   pname = "dorion";
-  version = "6.13.1";
+  version = "6.13.2";
 
   sources = {
     "x86_64-darwin" = {
       url = "https://github.com/SpikeHD/Dorion/releases/download/v${version}/Dorion_${version}_x64.dmg";
-      hash = "sha256-riAu9iui3CUSyGdDIB15x0RLQ5crLihRro8sM4syzbk=";
+      hash = "sha256-4wzV4LXxfFufnPGsoaBhDC2yobUnCp71Bvb69654SkU=";
       unpackCmd = "undmg \"$curSrc\"";
     };
     "aarch64-darwin" = {
       url = "https://github.com/SpikeHD/Dorion/releases/download/v${version}/Dorion_${version}_aarch64.dmg";
-      hash = "sha256-PpczABKI6ErpRShb33aGMMNdPgb8LsSTWmHjuc+HYs0=";
+      hash = "sha256-zsraD0S4ELVWfKtViLRau+aFKcj1JHQrMPqh7ryt62U=";
       unpackCmd = "undmg \"$curSrc\"";
     };
     "x86_64-linux" = {
       url = "https://github.com/SpikeHD/Dorion/releases/download/v${version}/Dorion_${version}-1.x86_64.rpm";
-      hash = "sha256-Ep6JSAAfbQ7AMU/TUUZjlt+sO2e8UbRdRp383rLfGBY=";
+      hash = "sha256-jLrOfkvGozPwY/2V6m+3tDvb2NFVBCL/wOuPlG09D9I=";
       unpackCmd = "rpm2cpio \"$curSrc\" | cpio -idmv";
     };
     "aarch64-linux" = {
       url = "https://github.com/SpikeHD/Dorion/releases/download/v${version}/Dorion_${version}_arm64.deb";
-      hash = "sha256-nXfewzPHEQ7kwIEFK5nqX/EEjrQwTOrsEwAPUFA4Plc=";
+      hash = "sha256-W2cRieZ+FWvKt6B60PKgnDyQWtTpjZdQ/7I4bxT80UI=";
       unpackCmd = "dpkg -X \"$curSrc\" .";
     };
   };
